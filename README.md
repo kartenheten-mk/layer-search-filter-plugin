@@ -12,6 +12,8 @@ the global map search.
 
 ## Quick start
 
+Download built files [here](https://nightly.link/kartenheten-mk/layer-search-filter-plugin/workflows/build/main/layersearch-built-assets.zip).
+
 ### Load the plugin in `index.html`
 
 Add the plugin stylesheet inside `<head>`:

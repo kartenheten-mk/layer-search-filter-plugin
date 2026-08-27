@@ -1,9 +1,11 @@
+const path = require('path');
+
 function createConfig({ development, minified = false }) {
   return {
     name: minified ? 'minified' : development ? 'development' : 'readable',
     entry: './src/index.js',
     output: {
-      path: __dirname,
+      path: path.resolve(__dirname, 'build'),
       filename: minified ? 'layer_search_filter.min.js' : 'layer_search_filter.js',
       library: {
         name: 'LayerSearchFilter',

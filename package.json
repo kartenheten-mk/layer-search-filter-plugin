@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "build:js": "webpack --config webpack.config.cjs --mode production",
-    "build:css": "sass --style=expanded --no-source-map scss/layer_search_filter.scss layer_search_filter.css",
+    "build:css": "npm run build:css:expanded && npm run build:css:min",
+    "build:css:expanded": "sass --style=expanded --no-source-map scss/layer_search_filter.scss build/layer_search_filter.css",
+    "build:css:min": "sass --style=compressed --no-source-map scss/layer_search_filter.scss build/layer_search_filter.min.css",
     "build": "npm run build:js && npm run build:css",
     "build:js:dev": "webpack --config webpack.config.cjs --mode development",
     "build:dev": "npm run build:js:dev && npm run build:css",
     "watch:js": "webpack --config webpack.config.cjs --mode development --watch",
-    "watch:css": "sass --watch --style=expanded --no-source-map scss/layer_search_filter.scss layer_search_filter.css",
+    "watch:css": "sass --watch --style=expanded --no-source-map scss/layer_search_filter.scss build/layer_search_filter.css",
     "lint": "eslint --config .eslintrc.cjs src tests webpack.config.cjs",
     "test": "node tests/run.js",
     "check": "npm run lint && npm test && npm run build"
